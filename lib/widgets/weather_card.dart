@@ -11,13 +11,17 @@ class WeatherCard extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return Card(
-      elevation: 5,
+      color: Colors.white,
+      elevation: 10,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(20)
+      ),
       child: Padding(
-        padding: EdgeInsets.all(20),
+        padding: EdgeInsets.all(30),
         child: Column(
           children: [
             WeatherImage(image: weather.image),
-            SizedBox(height: 10),
+            SizedBox(height: 20),
             WeatherText(city: weather.city, temperatue: weather.temperatue, description: weather.description)
           ],
         ),

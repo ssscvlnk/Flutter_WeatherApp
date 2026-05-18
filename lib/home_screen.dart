@@ -19,51 +19,88 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Погода'),
+        foregroundColor: Colors.white,
         centerTitle: true,
+        backgroundColor: Colors.deepPurple,
       ),
-      body: Padding(
-        padding: EdgeInsets.all(16),
+      body: Container(
+        width: double.infinity,
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            colors: [Color(0xFF7F7FD5), Color(0xFF86A8E7), Color(0xFF91EAE4)],
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter
+          ),
+        ),
+        child: Center(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            ElevatedButton(
-              onPressed: () {
-                showWeather(weatherList[0]);
-              }, 
-              child: Text('Лондон')
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                ElevatedButton(
+                  onPressed: () {
+                    showWeather(weatherList[0]);
+                  }, 
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.deepPurpleAccent,
+                    foregroundColor: Colors.white
+                  ),
+                  child: Text('Лондон')
+                ),
+                SizedBox(width: 10),
+                ElevatedButton(
+                  onPressed: () {
+                    showWeather(weatherList[1]);
+                  }, 
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.deepPurpleAccent,
+                    foregroundColor: Colors.white
+                  ),
+                  child: Text('Париж')
+                ),
+                SizedBox(width: 10),
+                ElevatedButton(
+                  onPressed: () {
+                    showWeather(weatherList[2]);
+                  }, 
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.deepPurpleAccent,
+                    foregroundColor: Colors.white
+                  ),
+                  child: Text('Токио')
+                ),
+                SizedBox(width: 10),
+                ElevatedButton(
+                  onPressed: () {
+                    showWeather(weatherList[3]);
+                  }, 
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.deepPurpleAccent,
+                    foregroundColor: Colors.white
+                  ),
+                  child: Text('Волжский')
+                ),
+                SizedBox(width: 10),
+                ElevatedButton(
+                  onPressed: () {
+                    showWeather(weatherList[4]);
+                  }, 
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.deepPurpleAccent,
+                    foregroundColor: Colors.white
+                  ),
+                  child: Text('Санкт-Петербург')
+                ),
+              ],
             ),
-            SizedBox(height: 10),
-            ElevatedButton(
-              onPressed: () {
-                showWeather(weatherList[1]);
-              }, 
-              child: Text('Париж')
-            ),
-            SizedBox(height: 10),
-            ElevatedButton(
-              onPressed: () {
-                showWeather(weatherList[2]);
-              }, 
-              child: Text('Токио')
-            ),
-            SizedBox(height: 10),
-            ElevatedButton(
-              onPressed: () {
-                showWeather(weatherList[3]);
-              }, 
-              child: Text('Волжский')
-            ),
-            SizedBox(height: 10),
-            ElevatedButton(
-              onPressed: () {
-                showWeather(weatherList[4]);
-              }, 
-              child: Text('Санкт-Петербург')
-            ),
-            SizedBox(height: 20),
+            SizedBox(height: 40),
             if (selectedWeather != null) 
               WeatherCard(weather: selectedWeather!)
           ],
         ),
+      ),
       ),
     );
   }

@@ -21,7 +21,7 @@ class WeatherText extends StatelessWidget{
           )
         ),
         Text(
-          '$temperatue℃',
+          '$temperatue°C',
           style: TextStyle(fontSize: 30)
         ),
         Text(
