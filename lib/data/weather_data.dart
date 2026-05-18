@@ -18,7 +18,7 @@ List<WeatherModel> weatherList = [
   WeatherModel(
     city: 'Волжский', 
     temperatue: 29, 
-    description: 'Солнечнр', 
+    description: 'Солнечно', 
     image: 'assets/sun.png'),
   WeatherModel(
     city: 'Санкт-Петербург', 
